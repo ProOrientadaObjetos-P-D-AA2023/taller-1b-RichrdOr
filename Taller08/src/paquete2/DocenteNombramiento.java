@@ -7,54 +7,52 @@ package paquete2;
 
 import paquete1.Docente;
 import java.util.Scanner;
+
 /**
  *
  * @author UTPL
  */
-public class DocenteNombramiento extends Docente{
-    private int valorSueldo;
-    private int valorHoraExtra;
-    private int numHorasExtras;
-    private double sueldo;
-    
-    public void leerDatos2(){
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese el valor del sueldo: ");
-        valorSueldo = entrada.nextInt();
-        System.out.println("Ingrese el valor de las horas extras: ");
-        valorHoraExtra = entrada.nextInt();
-        System.out.println("Ingrese el numero de horas extras: ");
-        numHorasExtras = entrada.nextInt();
-       
-    }
-    public void calcularSueldo(){
-        sueldo = valorSueldo + (valorHoraExtra * numHorasExtras);
-        System.out.println("EL sueldo del docente Nombramiento es: " + sueldo);
-    }
-    
+public class DocenteNombramiento extends Docente {
 
-    public int getValorSueldo() {
+    private double valorSueldo;
+    private double valorHoraExtra;
+    private int numeroHorasExtra;
+    private double sueldo;
+
+    public DocenteNombramiento(String nombres, String cedula) {
+        super(nombres, cedula);
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Ingrese el valor del sueldo: ");
+        valorSueldo = entrada.nextDouble();
+        System.out.print("Ingrese el valor de la hora extra: ");
+        valorHoraExtra = entrada.nextDouble();
+        System.out.print("Ingrese el número de horas extra: ");
+        numeroHorasExtra = entrada.nextInt();
+        sueldo = valorSueldo + (valorHoraExtra * numeroHorasExtra);
+    }
+
+    public double getValorSueldo() {
         return valorSueldo;
     }
 
-    public void setValorSueldo(int valorSueldo) {
+    public void setValorSueldo(double valorSueldo) {
         this.valorSueldo = valorSueldo;
     }
 
-    public int getValorHoraExtra() {
+    public double getValorHoraExtra() {
         return valorHoraExtra;
     }
 
-    public void setValorHoraExtra(int valorHoraExtra) {
+    public void setValorHoraExtra(double valorHoraExtra) {
         this.valorHoraExtra = valorHoraExtra;
     }
 
-    public int getNumHorasExtras() {
-        return numHorasExtras;
+    public int getNumeroHorasExtra() {
+        return numeroHorasExtra;
     }
 
-    public void setNumHorasExtras(int numHorasExtras) {
-        this.numHorasExtras = numHorasExtras;
+    public void setNumeroHorasExtra(int numeroHorasExtra) {
+        this.numeroHorasExtra = numeroHorasExtra;
     }
 
     public double getSueldo() {
@@ -64,5 +62,4 @@ public class DocenteNombramiento extends Docente{
     public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
-    
 }

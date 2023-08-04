@@ -5,6 +5,7 @@
  */
 package paquete2;
 
+import java.util.Scanner;
 import paquete1.Docente;
 
 /**
@@ -12,9 +13,19 @@ import paquete1.Docente;
  * @author UTPL
  */
 public class DocenteFactura extends Docente{
-    private double valorFactura;
+     private double valorFactura;
     private double valorIvaDescuento;
     private double valorCancelar;
+
+    public DocenteFactura(String nombres, String cedula) {
+        super(nombres, cedula);
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Ingrese el valor de la factura: ");
+        valorFactura = entrada.nextDouble();
+        System.out.print("Ingrese el valor del IVA o descuento: ");
+        valorIvaDescuento = entrada.nextDouble();
+        valorCancelar = valorFactura - valorIvaDescuento;
+    }
 
     public double getValorFactura() {
         return valorFactura;
@@ -39,5 +50,4 @@ public class DocenteFactura extends Docente{
     public void setValorCancelar(double valorCancelar) {
         this.valorCancelar = valorCancelar;
     }
-    
 }
