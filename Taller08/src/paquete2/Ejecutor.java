@@ -31,8 +31,6 @@ public class Ejecutor {
 
                 DocenteNombramiento docenteNombramiento = new DocenteNombramiento(nombres, cedula);
 
-                // Realizar operaciones con el objeto docenteNombramiento
-                // ...
             } else if (opcion == 2) {
                 System.out.print("Ingrese nombres del docente: ");
                 entrada.nextLine();
@@ -42,8 +40,6 @@ public class Ejecutor {
 
                 DocenteFactura docenteFactura = new DocenteFactura(nombres, cedula);
 
-                // Realizar operaciones con el objeto docenteFactura
-                // ...
             } else {
                 System.out.println("Error, opción no válida.");
             }
